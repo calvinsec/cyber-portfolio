@@ -43,4 +43,4 @@ cat secret.txt
 - Availability can be supported through backups and restore procedures.
 ## Evidence
 - Terminal output showing the permission change and the hash change.
-`![Terminal output](terminal-output.png)`
+![Terminal output](terminal-output.png)
