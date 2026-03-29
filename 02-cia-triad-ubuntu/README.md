@@ -13,26 +13,29 @@ Demonstrate the CIA Triad using basic Linux commands:
 ## Steps
 
 ### 1) Create a file
-```
+```bash
 echo "top secret" > secret.txt
 ls -l secret.txt
 cat secret.txt
 ```
+
 ### 2) Confidentiality: restrict access
-```
+```bash
 chmod 600 secret.txt
 ls -l secret.txt
 ```
+
 Expected result: permissions become -rw------- (only the owner can read/write).
 ### 3) Integrity: hash before and after change
-```
+```bash
 sha256sum secret.txt
 echo "tampered" >> secret.txt
 sha256sum secret.txt
 ```
 Expected result: the hash changes after the file content changes.
+
 ### 4) Availability: backup and restore
-```
+```bash
 cp secret.txt secret.txt.bak
 rm secret.txt
 cp secret.txt.bak secret.txt
