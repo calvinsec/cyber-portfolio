@@ -23,12 +23,14 @@ cat secret.txt
 chmod 600 secret.txt
 ls -l secret.txt
 ```
+Expected result: permissions become -rw------- (only the owner can read/write).
 ### 3) Integrity: hash before and after change
 ```
 sha256sum secret.txt
 echo "tampered" >> secret.txt
 sha256sum secret.txt
 ```
+Expected result: the hash changes after the file content changes.
 ### 4) Availability: backup and restore
 ```
 cp secret.txt secret.txt.bak
